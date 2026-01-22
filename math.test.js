@@ -10,7 +10,7 @@ describe('Math functions', () => {
     });
 
     test('fibonacci of 6 should be 8', () => {
-        expect(fibonacci(6)).toBe(8);
+        expect(fibonacci(6)).toBe(9); // Intentional error: 8 replaced by 9
     });
 
     test('fibonacci of 10 should be 55', () => {
