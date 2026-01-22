@@ -3,10 +3,12 @@
 \subsection{Parte 1: Establecimiento de la estructura del proyecto base}
 Se creó la estructura del proyecto incluyendo archivos de configuración y dependencias. Se utilizó el puerto 3111 para el servidor.
 
-\begin{center}
-    \textit{[Espacio para captura de pantalla: Estructura de archivos]}
-    \vspace{5cm}
-\end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/cap0.png}
+    \caption{Estructura inicial del proyecto}
+    \label{fig:cap0}
+\end{figure}
 
 \subsection{Parte 2: Creación de archivos base}
 A continuación se presenta el código fuente desarrollado:
@@ -67,9 +69,37 @@ Esta sección cubre los 4 pasos fundamentales solicitados:
     \item c. Definir trabajos (jobs) y pasos (checkout, install, lint, test).
 \end{itemize}
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.85\textwidth]{img/cap1-linter-tests.png}
+    \caption{Ejecución de linter y tests en el pipeline CI/CD}
+    \label{fig:cap1}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.85\textwidth]{img/cap2-server-running.png}
+    \caption{Servidor ejecutándose correctamente}
+    \label{fig:cap2}
+\end{figure}
+
 \textbf{Paso 4: Probar la CI.}
 \begin{itemize}
     \item a. Realizar cambios en el código.
     \item b. Ejecutar push.
     \item c. Verificar en la pestaña "Actions" de GitHub.
 \end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/parte4-paso4.1.png}
+    \caption{Verificación del workflow en GitHub Actions - Vista general}
+    \label{fig:parte4-paso4-1}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/parte4-paso4.2.png}
+    \caption{Detalle de la ejecución del workflow en GitHub Actions}
+    \label{fig:parte4-paso4-2}
+\end{figure}
