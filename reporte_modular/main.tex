@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{hyperref}
+
+\geometry{a4paper, margin=2.5cm}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\title{
+    \includegraphics[width=0.4\textwidth]{logo_espe.png} \\ [1cm]
+    \textbf{Laboratorio 6: CI/CD usando GitHub Actions} \\
+    \large Universidad de las Fuerzas Armadas ESPE
+}
+\author{Estudiante: [Nombre del Estudiante] \\ Instructor: Ing. Enrique Calvopiña E, Mgtr.}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\input{sections/introduccion}
+\input{sections/objetivos}
+\newpage
+\input{sections/desarrollo}
+\newpage
+\input{sections/resultados}
+\newpage
+\input{sections/conclusiones}
+\input{sections/recomendaciones}
+
+\end{document}

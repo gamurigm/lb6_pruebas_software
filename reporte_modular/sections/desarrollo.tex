@@ -1,0 +1,75 @@
+\section{Desarrollo}
+
+\subsection{Parte 1: Establecimiento de la estructura del proyecto base}
+Se creó la estructura del proyecto incluyendo archivos de configuración y dependencias. Se utilizó el puerto 3111 para el servidor.
+
+\begin{center}
+    \textit{[Espacio para captura de pantalla: Estructura de archivos]}
+    \vspace{5cm}
+\end{center}
+
+\subsection{Parte 2: Creación de archivos base}
+A continuación se presenta el código fuente desarrollado:
+
+\subsubsection{package.json}
+\begin{lstlisting}[language=json]
+{
+  "name": "lab6-ci-cd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "lint": "eslint ."
+  }
+}
+\end{lstlisting}
+
+\subsubsection{index.js}
+\begin{lstlisting}[language=javascript]
+import express from 'express';
+const app = express();
+const port = 3111;
+
+app.get('/', (req, res) => {
+  res.send('CI/CD Lab - GitHub Actions');
+});
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
+\end{lstlisting}
+
+\subsection{Parte 3: Configuración de Git y CI/CD}
+Esta sección cubre los 4 pasos fundamentales solicitados:
+
+\textbf{Paso 1: Crear repositorio en la cuenta de Git.}
+\begin{itemize}
+    \item a. Abrir la cuenta de Git en el navegador.
+    \item b. Crear un nuevo repositorio vacío.
+\end{itemize}
+
+\textbf{Paso 2: Ejecución de comandos para clonar al repositorio.}
+\begin{itemize}
+    \item a. \texttt{git init}
+    \item b. \texttt{git add .}
+    \item c. \texttt{git commit -m "Proyecto base con CI"}
+    \item d. \texttt{git branch -M main}
+    \item e. \texttt{git remote add origin https://github.com/USUARIO/REPO.git}
+    \item f. \texttt{git push -u origin main}
+\end{itemize}
+
+\textbf{Paso 3: Crear el workflow de GitHub Actions.}
+\begin{itemize}
+    \item a. Crear el archivo \texttt{.github/workflows/ci.yml}.
+    \item b. Configurar disparadores (push, pull\_request).
+    \item c. Definir trabajos (jobs) y pasos (checkout, install, lint, test).
+\end{itemize}
+
+\textbf{Paso 4: Probar la CI.}
+\begin{itemize}
+    \item a. Realizar cambios en el código.
+    \item b. Ejecutar push.
+    \item c. Verificar en la pestaña "Actions" de GitHub.
+\end{itemize}

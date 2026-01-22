@@ -1,0 +1,140 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{hyperref}
+
+\geometry{a4paper, margin=2.5cm}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\title{
+    \includegraphics[width=0.4\textwidth]{logo_espe.png} \\ [1cm]
+    \textbf{Laboratorio 6: CI/CD usando GitHub Actions} \\
+    \large Universidad de las Fuerzas Armadas ESPE
+}
+\author{Estudiante: [Nombre del Estudiante] \\ Instructor: Ing. Enrique Calvopiña E, Mgtr.}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{Introducción}
+Este documento detalla el proceso de configuración de un flujo de Integración Continua (CI) y Entrega Continua (CD) utilizando GitHub Actions. Se implementan pruebas unitarias con Jest y análisis estático con ESLint sobre un servidor Express básico.
+
+\section{Objetivos}
+\begin{itemize}
+    \item Configurar un flujo de CI en GitHub Actions para automatizar pruebas y linting.
+    \item Implementar pruebas unitarias utilizando Jest.
+    \item Aplicar análisis estático de código con ESLint.
+\end{itemize}
+
+\section{Desarrollo}
+
+\subsection{Parte 1: Establecimiento de la estructura del proyecto base}
+Se creó la estructura del proyecto incluyendo archivos de configuración y dependencias. Se utilizó el puerto 3111 para el servidor.
+
+\begin{center}
+    \textit{[Espacio para captura de pantalla: Estructura de archivos]}
+    \vspace{5cm}
+\end{center}
+
+\subsection{Parte 2: Creación de archivos base}
+A continuación se presenta el código fuente desarrollado:
+
+\subsubsection{package.json}
+\begin{lstlisting}[language=json]
+// Consultar archivo package.json generado
+\end{lstlisting}
+
+\subsubsection{index.js}
+\begin{lstlisting}[language=javascript]
+import express from 'express';
+const app = express();
+const port = 3111;
+// ... resto del codigo
+\end{lstlisting}
+
+\subsection{Parte 3: Configuración de Git y CI/CD}
+Esta sección cubre los 4 pasos fundamentales solicitados:
+
+\textbf{Paso 1: Crear repositorio en la cuenta de Git.}
+\begin{itemize}
+    \item a. Abrir la cuenta de Git en el navegador.
+    \item b. Crear un nuevo repositorio vacío.
+\end{itemize}
+
+\textbf{Paso 2: Ejecución de comandos para clonar al repositorio.}
+\begin{itemize}
+    \item a. \texttt{git init}
+    \item b. \texttt{git add .}
+    \item c. \texttt{git commit -m "Proyecto base con CI"}
+    \item d. \texttt{git branch -M main}
+    \item e. \texttt{git remote add origin https://github.com/USUARIO/REPO.git}
+    \item f. \texttt{git push -u origin main}
+\end{itemize}
+
+\textbf{Paso 3: Crear el workflow de GitHub Actions.}
+\begin{itemize}
+    \item a. Crear el archivo \texttt{.github/workflows/ci.yml}.
+    \item b. Configurar disparadores (push, pull\_request).
+    \item c. Definir trabajos (jobs) y pasos (checkout, install, lint, test).
+\end{itemize}
+
+\textbf{Paso 4: Probar la CI.}
+\begin{itemize}
+    \item a. Realizar cambios en el código.
+    \item b. Ejecutar push.
+    \item c. Verificar en la pestaña "Actions" de GitHub.
+\end{itemize}
+
+\section{Resultados y Evidencias}
+En esta sección se deben incluir capturas de pantalla del flujo de GitHub Actions ejecutándose correctamente.
+
+\begin{center}
+    \textit{[Espacio para captura de pantalla: Workflow aprobado en GitHub]}
+    \vspace{7cm}
+\end{center}
+
+\section{Conclusiones}
+\begin{enumerate}
+    \item GitHub Actions facilita la integración de pruebas automatizadas en el flujo de desarrollo.
+    \item El uso de linting y pruebas unitarias garantiza un código más limpio y libre de errores básicos antes del despliegue.
+\end{enumerate}
+
+\section{Recomendaciones}
+\begin{enumerate}
+    \item Se recomienda configurar umbrales de cobertura de pruebas para asegurar la calidad del software.
+    \item Utilizar secretos de GitHub para manejar información sensible en los flujos de trabajo.
+\end{enumerate}
+
+\end{document}
